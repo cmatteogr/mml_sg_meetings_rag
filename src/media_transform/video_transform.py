@@ -15,6 +15,7 @@ def extract_audio(video_filepath: str, video_audio_filepath: str):
     :return:
     """
     # Validate filepaths
+    assert os.path.exists(video_filepath), 'Video filepath does not exist'
     assert os.path.splitext(video_filepath)[1] == '.mp4', 'Invalid video extension, it must be mp4'
     assert os.path.splitext(video_audio_filepath)[1] == '.mp3', 'Invalid video audio extension, it must be mp3'
 
