@@ -9,5 +9,6 @@ class Test(TestCase):
         recording_transcrip_filepath = '../src/data/meetings_data/MML-SG Training meeting (2024-06-05 19_10 GMT-5).csv'
         recording_transcrip_df = pd.read_csv(recording_transcrip_filepath)
         # When
-        preprocess_recording_transcription(recording_transcrip_df)
+        recording_transcr_df = preprocess_recording_transcription(recording_transcrip_df)
+        recording_transcr_df.to_json('../src/data/meetings_data/MML-SG Training meeting (2024-06-05 19_10 GMT-5).json')
         # Then
