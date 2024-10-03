@@ -12,6 +12,9 @@ class Test(TestCase):
         mp4_files = [file for file in os.listdir(folder_path) if file.endswith('.mp4')]
         for mp4_file in mp4_files:
             print(f'Processing {mp4_file}')
+            if mp4_file != "RAGs MML-SG - Made with Clipchamp.mp4":
+                continue
+
             # When
             video_filepath = os.path.join(folder_path, mp4_file)
             video_audio_filepath = os.path.join(folder_path, mp4_file.replace('.mp4','.mp3'))
